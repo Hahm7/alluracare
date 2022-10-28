@@ -1,0 +1,216 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+body {
+  background-color: #F1F6F9;
+  margin: 0 auto;
+  padding-top: 150px;
+}
+
+
+
+/* Navigation  */
+
+
+.navbar {
+  padding: 10px 0;
+  background: #fff;
+  transition: all .3s ease;
+  box-shadow: 0px 10px 20px 0px rgb(50 65 141 / 10%);
+}
+
+@media (max-width: 991px){
+  .navbar {
+    padding: 15px 40px 10px 10px;
+    box-shadow: 0px 10px 20px 0px rgb(50 65 141 / 10%);
+  }
+}
+
+
+
+/* Assessment Header */
+
+
+
+/*Assesment Info*/
+
+#card {
+  background-color: rgb(255, 255, 255);
+  font-family: sans-serif;
+  padding-bottom: 42px;
+  text-align: center;
+  display: block;
+  overflow: hidden;
+  margin: 10px auto 100px;
+  border-radius: 25px;
+  box-shadow: rgb(50 65 141 / 12%) 0px 20px 40px 0px;
+  max-width: 1140px;
+  width: 100%;
+  border-top: 3px solid #47b2e4;
+  border-bottom: 3px solid #47b2e4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.btn {
+    font-size: 16px;
+    font-family: Poppings, sans-serif;
+    margin: 0 1rem;
+    display: inline-block;
+    background-color: #5D78FF;
+    color: #fff;
+    border-radius: 35px;
+    cursor: pointer;
+    font-weight: 500;
+    outline: none;
+    padding: .5rem 1.5rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all ease-in-out .3s;
+}
+
+.btn:hover{
+    background: #425FEE;
+    box-shadow: 0 8px 20px rgb(56 87 241 / 30%);
+    transform: scale(1.03);
+    text-decoration: none;
+    color: #fff;
+}
+
+
+.button:hover{
+  background: #0578ca;
+  box-shadow: 0 8px 20px rgb(0 181 251 / 32%);
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+
+
+.button:focus{
+  outline: none;
+  box-shadow: none;
+}
+
+
+
+
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+.button {
+  background-color: #28a7dc;
+  display: flex;
+  height: 60px;
+  background: "blue";
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 6px 30px -10px;
+  transition: box-shadow 1299 ease;
+}
+
+
+
+.wrap2 {
+  margin: 10px auto;
+  max-width: 80rem;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  position: relative;
+  border-radius: 20px;
+}
+
+.wrap2 a{
+  display: block;
+  padding: 15px 50px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  background: #089de3;
+  border-radius: 10px;
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all .3s ease;
+  transform: scale(1);
+  justify-content: space-around;
+  text-align: center;
+}
+
+
+
+
+
+@media (max-width: 1024px) {
+  .service__slider_item_icon {
+    margin: auto;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .col {
+    margin: 0 auto;
+    max-width: 1260px;
+  }
+}
+
+@media (max-width: 480px) {
+  .service__slider_item_icon {
+    margin: auto;
+  }
+  .wrap2 a{
+    padding: 15px 30px;
+  }
+  .items {
+    padding: 0 30px 0 30px;
+  }
+
+}
+
+
+
+
+#error-page .content{
+  text-align: center;
+}
+.content h2{
+  display: inline-block;
+    font-size: 15vh;
+    font-weight: 700;
+    font-family: "Poppins", sans-serif;
+    color: #0099CC;
+    margin: 5px auto;
+}
+
+
+
+.content h4{
+  text-transform: uppercase;
+  color: #282F49;
+  font-size: 2em;
+  position: relative;
+}
+.content p{
+  font-size: 1.5em;
+  color: #282F49;
+
+}
+

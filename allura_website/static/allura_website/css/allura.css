@@ -1,0 +1,392 @@
+/*=========
+Font load
+===========*/
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,531;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,531;1,600;1,700;1,800;1,900&display=swap");
+/*=========*/
+
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,600");
+
+:root {
+  background-color: #F1F6F9;
+  font-size: 62.5%;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+
+.overlap-group {
+  padding: 0 30px;
+  align-self: flex-start;
+  height: 120px;
+  position: relative;
+  width: 100%;
+  background-color: #089de3;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0px 0px 10px;
+}
+
+.button3{
+  background-color: red;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 35px 10px 35px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  margin-top: 30px;
+}
+
+.button3 a {
+  color: white;
+  font-family: "poppins";
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.titleCare {
+  color: #fff;
+  font-family: "poppins";
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 15px;
+}
+
+#hud{
+  display:flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.hud-prefix{
+    text-align: center;
+    font-size: 2rem;
+}
+
+
+#progressText {
+  float: right;
+  margin-top: 1rem;
+  color: #fff;
+  font-family: "poppins";
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+#progressBar{
+  margin-right: 50px;
+  width: 20rem;
+  height: 2rem;
+  border: 0.3rem solid #fff;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+}
+
+#progressBarFull{
+    height: 1.4rem;
+    background-color: #fff;
+    width: 0%;
+}
+
+h2 {
+    font-family: "Jost", sans-serif;
+    font-size: 4.2rem;
+    font-weight: 700;
+}
+
+.quizLogo {
+  height: 6.5rem;
+  float: right;
+  margin-top: -30px;
+}
+
+
+.form {
+  max-width: 80rem;
+  margin: 25px auto;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 36px;
+}
+
+#question {
+  color: black;
+  font-family: "poppins";
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 30px;
+
+}
+
+.text-center {
+  text-align: center;
+}
+
+
+
+.group {
+  border: 2px solid #ccc;
+  padding: 2px 48px;
+  margin: 8px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+
+
+input[type="radio"] {
+  display: none;
+}
+
+label {
+  position: relative;
+  display: block;
+}
+
+label::before {
+  content: "";
+  background: url('/static/allura_website/img/quiz/check-circle.svg');
+  background-position: center;
+  background-size: contain;
+  width: 41px;
+  height: 41px;
+  position: absolute;
+  left: -46px;
+  transform: scale(0) rotateZ(180deg);
+  transition: all 0.4s cubic-bezier(0.54, 0.01, 0, 1.49);
+}
+
+input[type="radio"]:checked + label::before {
+  transform: scale(1) rotateZ(0deg);
+}
+
+input[type="radio"]:checked + label::after {
+  border: 2px solid #54e0c7;
+}
+
+input[type="radio"]:checked + label p {
+  color: #fff;
+}
+
+
+
+label:before {
+  position: absolute;
+}
+
+
+
+label::after {
+  content: "";
+  border: 2px solid #4ea29b;
+  width: 32px;
+  height: 31px;
+  position: absolute;
+  left: -43px;
+  top: 3px;
+  border-radius: 50%;
+}
+
+label p {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0;
+  min-height: 60px;
+  font-size: 18px;
+
+}
+
+
+.wrap {
+  margin: 10px auto;
+  max-width: 80rem;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  position: relative;
+  border-radius: 20px;
+}
+
+.wrap a{
+  display: block;
+  padding: 15px 50px;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  background: #089de3;
+  border-radius: 10px;
+  color: #ffffff;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: all .3s ease;
+  transform: scale(1);
+  justify-content: space-around;
+  text-align: center;
+}
+
+
+
+
+.button {
+  background-color: #089de3;
+  display: flex;
+  height: 60px;
+  background: "blue";
+  border-radius: 15px;
+  position: relative;
+  box-shadow: 0 6px 30px -10px;
+  transition: box-shadow 1299 ease;
+}
+
+.button:hover{
+  background: #0578ca;
+  box-shadow: 0 8px 20px rgb(0 181 251 / 32%);
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+.button2:hover{
+  background: #0578ca;
+  box-shadow: 0 8px 20px rgb(0 181 251 / 32%);
+  transform: scale(1.03);
+  cursor: pointer;
+}
+
+
+
+.button2 {
+  height: 60px;
+  position: relative;
+  float: right;
+  margin-left:  5%;
+}
+
+
+.btn[disabled]:hover {
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+
+@media (max-width: 992px) {
+  .quizLogo {
+    margin-top: -40px;
+  }
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+@media (max-width: 576px) {
+  #progressText {
+    margin-top: 3px;
+  }
+  #progressBar {
+    height: 1.5rem;
+    margin-top: 1rem;
+  }
+  #progressBarFull {
+    height: 1rem;
+  }
+  #hud {
+    margin-top: 2rem;
+  }
+  #question {
+    font-size: 22px;
+  }
+  .form {
+    margin: auto;
+  }
+  .overlap-group{
+    padding: 0 10px;
+  }
+  .button {
+    width: 150px;
+    margin-right: 10%;
+  }
+  .button-content {
+    width: 150px;
+  }
+  .button-set {
+    width: 150px;
+  }
+  .quizLogo {
+    height: 4rem;
+    float: right;
+    margin-top: -44px;
+  }
+  .titleCare {
+    margin-top: 5%;
+    margin-left: 25%;
+    color: #fff;
+    font-family: "poppins";
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    margin-bottom: 0;
+    text-align: center;
+    display: inline-block;
+  }
+  label p{
+    font-size: 15px;
+  }
+  .group {
+    padding: 0px 15px 0px 50px;
+  }
+  .wrap {
+    position: fixed;
+    bottom: 15px;
+    left:40px;
+  }
+  h2 {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+  .button3 {
+    background-color: red;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px 10px 35px;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    position: absolute;
+    left: -25px;
+    margin-top: 20px;
+
+  }
+  .button3 a {
+    color: white;
+    font-family: "poppins";
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
+
+

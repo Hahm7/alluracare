@@ -1,0 +1,89 @@
+{% extends "allura_website/base.html" %}
+{% load static %}
+{% block styles %}
+    <!-- <link rel="stylesheet" href="{% static 'allura_website/css/services.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'allura_website/css/gauge.css' %}">
+    <script src="https://unpkg.com/chart.js@2.8.0/dist/Chart.bundle.js"></script>
+    <script src="https://unpkg.com/chartjs-gauge@0.3.0/dist/chartjs-gauge.js"></script>
+    <script src="https://unpkg.com/chartjs-plugin-datalabels@0.7.0/dist/chartjs-plugin-datalabels.js"></script>
+{% endblock styles %}
+{% block content %}
+
+    <!-- Header -->
+
+    <section class="result-header">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col">
+                    <h2>Results</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End Header -->
+
+
+    <!-- ======= Info ======= -->
+    <section class="results">
+        <div class="container" data-aos="fade-up">
+
+
+
+          <div class="row justify-content-center">
+            <div class="col d-flex align-items-stretch contact_left">
+              <div class="info">
+                <div class="leftbox">
+
+
+
+
+                    <div id="canvas-holder">
+                        <canvas id="chart"></canvas>
+                    </div>
+
+
+
+                </div>
+
+                <div class="rightbox text-center">
+                    <h2 id="title"></h2>
+                    <p id="desc"></p>
+
+
+                    <p class="care">This result is an indication of the care and support needs of the person assessed, based on the
+                    information you provided. The result should only be taken as a guide, as we would always recommend
+                    a face-to-face assessment before making a choice about the care and support needed.</p>
+
+
+                    <div class="wrap" role="button">
+                        <a href="{% url 'allura-contact' %}" class="btn">Contact Us</a>
+                        <a href="{% url 'allura-services' %}" class="btn">Go Back</a>
+                    </div>
+                </div>
+
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </section>
+
+    <!-- End Info -->
+
+
+
+
+
+
+{% endblock content %}
+
+
+{% block js %}
+    <script src="{% static 'allura_website/js/result.js' %}"></script>
+    <script src="{% static 'allura_website/js/allura.js' %}"></script>
+{% endblock js %}
+
+
+

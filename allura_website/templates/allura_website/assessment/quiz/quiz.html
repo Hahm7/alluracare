@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'allura_website/css/allura.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'allura_website/css/game.css' %}"> -->
+    {% if title %}
+    <title> {{ title }} </title>
+    {% else %}
+    <title>Allura Care</title>
+    {% endif %}
+</head>
+<body>
+
+    <div id="game" class="justify-center flex-column">
+        <div class="overlap-group">
+            <div class="centers">
+                <div class="button3 left_edge"><a href="{% url 'allura-assessment' %}">EXIT</a></div>
+                <h2 class="titleCare">Care Assessment</h2>
+                <div id="hud">
+                    <div id="hud-item">
+                        <p id="progressText" class="hud-prefix">
+                        </p>
+                        <div id="progressBar">
+                            <div id="progressBarFull"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <a href="index.html" class="quizLogo">
+                <img src="{% static 'allura_website/img/white.png' %}" class="quizLogo" alt="site-logo">
+            </a>
+        </div>
+
+
+
+        <form class="form">
+            <h2 class="text-center" id='question'>What is the answer to this question?</h2>
+
+            <div class="group">
+                <input type="radio" name="radio" value="1" id="radio1" class="example"/>
+                <label for="radio1"><p data-number="1" class="choice-text">Choice 1</p></label>
+            </div>
+
+            <div class="group">
+                <input type="radio" name="radio" value="2" id="radio2" class="example" />
+                <label for="radio2"><p data-number="2" class="choice-text">Choice 2</p></label>
+            </div>
+
+            <div class="group">
+                <input type="radio" name="radio" value="3" id="radio3" class="example" />
+                <label for="radio3"><p data-number="3" class="choice-text">Choice 3</p></label>
+            </div>
+
+            <div class="group">
+                <input type="radio" name="radio" value="4" id="radio4" class="example" />
+                <label for="radio4"><p data-number="4" class="choice-text">Choice 4</p></label>
+            </div>
+        </form>
+
+
+    </div>
+
+    <footer class='wrap' role="button" aria-pressed="false">
+        <a class="btn button" id="btnBack">Back</a>
+        <a class="btn button2" id="btn">Next</a>
+    </footer>
+
+
+
+<!-- jQuery -->
+<script src="{% static 'allura_website/js/jquery.min.js' %}"></script>
+<script src="{% static 'allura_website/js/allura.js' %}"></script>
+
+
+
+
+<!-- Changing background of selected choice -->
+
+<script>
+    $("input:radio").change(function () {
+        if ($("#radio1").is(":checked")) {
+            $('#radio1').parent().css("background-color", "#28a7dc");
+            $('#radio1').parent().css("border", "2px solid black");
+        }
+        else {
+            $("#radio1").parent().css("background-color", "#fff");
+            $('#radio1').parent().css("border", "2px solid #ccc");
+        }
+    });
+</script>
+
+<script>
+    $("input:radio").change(function () {
+        if ($("#radio2").is(":checked")) {
+            $('#radio2').parent().css("background-color", "#28a7dc");
+            $('#radio2').parent().css("border", "2px solid black");
+        }
+        else {
+            $("#radio2").parent().css("background-color", "#fff");
+            $('#radio2').parent().css("border", "2px solid #ccc");
+        }
+    });
+</script>
+
+<script>
+    $("input:radio").change(function () {
+        if ($("#radio3").is(":checked")) {
+            $('#radio3').parent().css("background-color", "#28a7dc");
+            $('#radio3').parent().css("border", "2px solid black");
+        }
+        else {
+            $("#radio3").parent().css("background-color", "#fff");
+            $('#radio3').parent().css("border", "2px solid #ccc");
+        }
+    });
+</script>
+
+<script>
+    $("input:radio").change(function () {
+        if ($("#radio4").is(":checked")) {
+            $('#radio4').parent().css("background-color", "#28a7dc");
+            $('#radio4').parent().css("border", "2px solid black");
+        }
+        else {
+            $("#radio4").parent().css("background-color", "#fff");
+            $('#radio4').parent().css("border", "2px solid #ccc");
+        }
+    });
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

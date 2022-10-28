@@ -1,0 +1,149 @@
+{% extends "allura_website/base.html" %}
+{% load static %}
+{% block styles %}
+    <!-- <link rel="stylesheet" href="{% static 'allura_website/css/services.css' %}"> -->
+    <link rel="stylesheet" href="{% static 'allura_website/css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'allura_website/css/icofont/icofont.min.css' %}">
+    <link rel="stylesheet" href="{% static 'allura_website/css/slick.css' %}">
+    <link rel="stylesheet" href="{% static 'allura_website/css/slick-theme.css' %}">
+{% endblock styles %}
+{% block content %}
+
+<!-- End Navigation -->
+
+
+
+    <div class="row text-center">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="contact-header">
+                <h1>Contact Us</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ======= Contact Section ======= -->
+    <section class="contact-us">
+        <div class="container" data-aos="fade-up">
+
+
+
+          <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-10 d-flex align-items-stretch contact-left">
+              <div class="info">
+
+                <div class="contact_header">
+                  <h3 class="title">Let's get in touch</h3>
+                  <p class="text" style="padding: 0 0 10px 0;">To enquire about our services and how we can help you,
+                    or for any other queries, please use the form on this website. Alternatively, you can contact us by
+                    phone to speak with us directly.
+                  </p>
+                </div>
+
+
+
+                <div class="address">
+                  <i class="icofont-google-map"></i>
+                  <h4>Location:</h4>
+                  <p class="address">Suite 605, Crown House, North Circular Road NW10 7PN</p>
+                </div>
+
+                <div class="email">
+                  <i class="icofont-envelope"></i>
+                  <h4>Email:</h4>
+                  <p class="email">alluracare@gmail.com</p>
+                </div>
+
+                <div class="phone">
+                  <i class="icofont-phone"></i>
+                  <h4>Call:</h4>
+                  <p class="phone">0203 620 4327</p>
+                </div>
+
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.6789965756375!2d-0.2865483842289206!3d51.53744727964006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876122043ebceef%3A0x2d8e8a5b6bacd373!2sN%20Circular%20Rd%2C%20London%20NW10%207PN!5e0!3m2!1sen!2suk!4v1609692968584!5m2!1sen!2suk"  frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+              </div>
+            </div>
+
+            <div class="col-lg-6 col-md-10 d-flex align-items-stretch contact-right">
+                <div class="contact-form">
+                    <span class="circle one"></span>
+                    <span class="circle two"></span>
+
+                    <form action="{% url 'allura-contact' %}" method="post" autocomplete="off" role="form">
+                        {% csrf_token %}
+                        <h3 class="title">Contact Us</h3>
+                        <div class="input-container">
+                            <input type="text" name="name" id="name" class="input">
+                            <label for="">Name *</label>
+                            <span>Name *</span>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" name="email" id="email" class="input">
+                            <label for="">Email *</label>
+                            <span>Email *</span>
+                        </div>
+                        <div class="input-container">
+                            <input type="text" name="phone" id="phone" class="input">
+                            <label for="">Phone *</label>
+                            <span>Phone *</span>
+                        </div>
+                        <!-- <div class="input-container">
+                            <input type="text" name="subject" id="subject" class="input">
+                            <label for="">Subject</label>
+                            <span>Subject</span>
+                        </div> -->
+                        <div class="input-container textarea focus">
+                            <textarea name="message" class="input" id="message"></textarea>
+                            <label for="">Message *</label>
+                            <span>Message *</span>
+                        </div>
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" value="True" name="accept" required>
+                            <label class="form-check-label">I consent to sharing my personal information</label>
+                        </div>
+                        <input type="submit" name="send" class="btn btn-submit" id="send">
+                    </form>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
+      </section><!-- End Contact Section -->
+
+
+
+
+<script src="{% static 'allura_website/js/app.js' %}"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
+
+{% block js %}
+    <script src="{% static 'allura_website/js/script.js' %}"></script>
+    <!-- Slick -->
+    <script src="{% static 'allura_website/js/slick.min.js' %}"></script>
+
+    <!-- Validate -->
+    <script src="{% static 'allura_website/js/validate.js' %}"></script>
+
+
+
+
+
+
+{% endblock js %}

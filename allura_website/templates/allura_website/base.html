@@ -1,0 +1,320 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta http-equiv="cache-control" content="max-age=0" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
+    <meta http-equiv="pragma" content="no-cache" />
+
+    <!-- Bootstrap 4.5 CSS -->
+    <link rel="stylesheet" href="{% static 'allura_website/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'allura_website/css/magnific-popup.css' %}">
+
+    <!-- favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{%static 'allura_website/img/apple-touch-icon.png' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'allura_website/img/favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'allura_website/img/favicon-16x16.png' %}">
+
+
+    <!-- Slick -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+
+    <!--- Google Font --->
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+
+
+
+
+
+
+    <!--- stylesheets -->
+    <!-- <link rel="stylesheet" href="{% static 'allura_website/main.css' %}"> -->
+    <!-- <link rel="stylesheet" href="{% static 'allura_website/fixed.css' %}"> -->
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'allura_website/about.css' %}"> -->
+    <!-- <link rel="stylesheet" href="{% static 'allura_website/glide.core.min.css' %}"> -->
+    <!-- <link rel="stylesheet" href="{% static 'allura_website/glide.theme.min.css' %}"> -->
+
+    <!-- imported -->
+    <link rel="stylesheet" href="{% static 'allura_website/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'allura_website/css/animate.css' %}">
+
+
+    <!-- stylesheets -->
+    {% block styles %}{% endblock styles %}
+
+
+
+
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="{% static 'allura_website/font-awesome/css/font-awesome.min.css' %}">
+
+
+
+
+
+
+
+
+
+
+
+
+    {% if title %}
+    <title> {{ title }} </title>
+    {% else %}
+    <title>Allura Care</title>
+    {% endif %}
+
+</head>
+<body onunload=''>
+
+    <!--   Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a href="{% url 'allura-home' %}" class="navbar-brand">
+                <img src="{% static 'allura_website/img/allura_logo.png' %}" alt="site-logo">
+            </a>
+            <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                <ul class="nav navbar-nav main-navigation">
+                    <li class="nav-item active">
+                        <a href="{% url 'allura-home' %}" class="nav-link scroll">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'allura-services' %}" class="nav-link scroll">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'allura-about' %}" class="nav-link scroll">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{% url 'allura-contact' %}" class="nav-link scroll">Contact Us</a>
+                    </li>
+                </ul>
+                <div class="navbar-nav">
+                    <a href="tel:448 833 5272 332"><i class="fa fa-phone"></i> 0203 620 4327 </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- End Navigation -->
+
+
+
+
+
+
+    {% block content %}{% endblock %}
+
+
+
+    <!-- Contact -->
+
+    <section class="contact" id="contact">
+        <div class="contact__background_shape">
+            <svg viewBox="0 0 1920 79">
+                <path d="M0 0h1920v79L0 0z" data-name="Path 1450" />
+            </svg>
+        </div>
+
+        <div class="container">
+            {% block contact %}{% endblock %}
+
+            <div class="row contact__widget">
+                <div class="col-lg-4">
+                    <div class="contact__widget_logo">
+                        <img src="{% static 'allura_website/img/home/white.png' %}" alt="widget-logo">
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact__widget_sitemap">
+                        <h3>Useful Links</h3>
+                        <ul>
+                            <li><a href="{% url 'allura-about' %}" >Who We Are</a></li>
+                            <li><a href="{% url 'allura-services' %}" >What We Do</a></li>
+                            <li><a href="{% url 'allura-contact' %}">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="contact__widget_address">
+                        <h3>Address</h3>
+                        <ul>
+                            <li><a href="tel:448 833 5272 332"><i class="fa fa-phone"></i>0203 620 4327</a></li>
+                            <li><a href="mailto:hello@example.com"><i class="fa fa-envelope"></i>alluracare@gmail.com</a></li>
+                            <li><p><i class="fa fa-map-marker"></i>Suite 605 Crown House, North Circular Road, London NW10 7PN</p></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row contact__footer">
+                <div class="col-lg-6">
+                    <div class="contact__footer_copy">
+                        <p>All right reserved copyright &copy; Portio 2019</p>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="contact__footer_social">
+                        <ul>
+                            <li><a href=""><i class="fa fa-facebook-official"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin-square"></i></a></li>
+                            <li><a href=""><i class="fa fa-pinterest-square"></i></a></li>
+                            <li><a href=""><i class="fa fa-facebook-official"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- End Contact -->
+
+
+
+
+
+
+
+
+
+{% for message in messages %}
+    {% if message.tags == 'success' %}
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            $("#exampleModal").modal('show');
+        });
+    </script>
+
+    {% endif %}
+{% endfor %}
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+
+
+      </div>
+      <div class="modal-body text-center">
+        <div class="text-center tmt-3">
+            <i class="fa-regular fa-circle-check fa-6x" style="color: #47b2e4;"></i>
+        </div>
+        <br>
+        <div class="mb-3">
+            <h3>Message was sent!</h3>
+        </div>
+        <h6>Thank you, we will contact you as soon as possible.</h6>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn2 btn-secondary btn-sm" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+<script src="{% static 'allura_website/js/jquery.min.js' %}"></script>
+
+<!-- Popper JS -->
+<script src="{% static 'allura_website/js/popper.min.js' %}"></script>
+
+<!-- Bootstrap 4.5 JS -->
+<script src="{% static 'allura_website/js/bootstrap.min.js' %}"></script>
+
+<script type="text/javascript">
+// Notice how this gets configured before we load Font Awesome
+window.FontAwesomeConfig = { autoReplaceSvg: false };
+</script>
+<!-- font awesome -->
+<!-- <script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script> -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+
+
+<!-- imported js -->
+
+<script src="{% static 'allura_website/js/jquery.waypoints.min.js' %}"></script>
+<script src="{% static 'allura_website/js/jquery.magnific-popup.min.js' %}"></script>
+<script src="{% static 'allura_website/js/TweenMax.min.js' %}"></script>
+
+
+<!-- Responsive tabs -->
+<script src="https://cdn.jsdelivr.net/npm/responsive-tabs@1.6.3/js/jquery.responsiveTabs.min.js"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
+<!-- Sweet Alert -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+{% block js %}{% endblock js %}
+
+
+
+
+
+<script src="{% static 'allura_website/js/service.js' %}"></script>
+
+<script src="{% static 'allura_website/js/main_2.js' %}"></script>
+
+<!-- ddos defend script -->
+
+<script src="{% static 'allura_website/js/defend.js' %}"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
