@@ -39,6 +39,8 @@ EMAIL_HOST_PASSWORD = os.getenv('GMAIL_USER_PASSWORD')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
+CSRF_TRUSTED_ORIGINS = ['https://alluracare-production.up.railway.app']
+
 
 # Application definition
 
