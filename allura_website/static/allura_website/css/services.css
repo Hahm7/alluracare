@@ -108,7 +108,7 @@ body {
     align-items: center;
 }
 .assessment .assess-img {
-    background-image: url(/static/allura_website/img/services/quiz.jpg);
+    background-image: url(/static/allura_website/img/services/assess.jpeg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
