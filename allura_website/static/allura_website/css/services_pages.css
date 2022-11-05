@@ -133,35 +133,10 @@
 }
 
 
-.right_sidebar .advice_widget .form-control {
-  height: 50px;
-  border-color: #f0e9ff;
-  font-size: 13px;
-  color: #999999;
-  padding-left: 20px;
-  border-radius: 0;
-}
 
 
-.right_sidebar .advice_widget .form-control::placeholder {
-  color: #999999;
-}
 
 
-.right_sidebar .advice_widget .form-control:focus {
-  border-color: #f0e9ff;
-  outline: 0;
-  box-shadow: none;
-}
-
-
-.right_sidebar .advice_widget .input-group button {
-  background: #fff;
-  border-left: 0;
-  border: 1px solid #f0e9ff;
-  padding: 4px 15px;
-  border-left: 0;
-}
 
 
 
