@@ -305,8 +305,8 @@
 }
 
 .header-figure img.header-mask-svg {
-  -webkit-mask: url('/static/allura_website/img/hero-mask-svg.png');
-          mask: url('/static/allura_website/img/hero-mask-svg.png');
+  -webkit-mask: url('/static/allura_website/img/mask.png');
+          mask: url('/static/allura_website/img/mask.png');
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-size: contain;
@@ -448,8 +448,6 @@
 }
 
 .about_content-thumb .about_content-thumb-image img.about_mask_svg {
-  -webkit-mask: url("img/about-mask-svg.svg");
-          mask: url("img/about-mask-svg.svg");
   -webkit-mask-repeat: no-repeat;
           mask-repeat: no-repeat;
   -webkit-mask-size: contain;
