@@ -584,12 +584,17 @@
 }*/
 
 .contact-widget ul li p {
+  display: inline-block;
+}
+
+.contact-widget ul li p {
   text-decoration: none;
-  display: block;
+  display: inline-block;
   color: #0099CC;
   transition: all .3s ease;
   font-family: "Poppins", sans-serif;
   font-size: 18px;
+
 }
 
 .contact-widget ul li p i {
@@ -602,24 +607,11 @@
 /*testing icon and text*/
 
 
-.toolboxItems {
-  display: table;
-}
-
-.toolboxItems li {
-  display: table-row;
-}
-
-.toolboxItems .icon,
-.toolboxItems .label {
-  display: table-cell;
-  width: 30px;
-  vertical-align: middle;
-  padding: 10px;
-}
-
-.toolboxItems .label {
-  width: 150px;
+.fa {
+  font-size: 30px;
+  color: #C1761B;
+  margin-right: 10px;
+  margin-top: 5px;
 }
 
 
