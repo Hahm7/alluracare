@@ -1135,9 +1135,7 @@
   margin-right: 15px;
 }
 
-.contact__widget_address ul li a:hover {
-  color: #5D78FF;
-}
+
 
 .contact__widget_address ul li:not(:last-child) {
   margin-bottom: 10px;

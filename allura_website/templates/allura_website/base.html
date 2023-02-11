@@ -15,7 +15,22 @@
 
     <!-- Bootstrap 4.5 CSS -->
     <link rel="stylesheet" href="{% static 'allura_website/css/bootstrap.min.css' %}">
+
+
+    <!-- stylesheets -->
+    {% block styles %}{% endblock styles %}
+    <!-- imported -->
+    <link rel="stylesheet" href="{% static 'allura_website/css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'allura_website/css/animate.css' %}">
+
+
     <link rel="stylesheet" type="text/css" href="{% static 'allura_website/css/magnific-popup.css' %}">
+
+
+
+
+
+
 
     <!-- favicons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{%static 'allura_website/img/apple-touch-icon.png' %}">
@@ -44,13 +59,7 @@
     <!-- <link rel="stylesheet" href="{% static 'allura_website/glide.core.min.css' %}"> -->
     <!-- <link rel="stylesheet" href="{% static 'allura_website/glide.theme.min.css' %}"> -->
 
-    <!-- imported -->
-    <link rel="stylesheet" href="{% static 'allura_website/css/main.css' %}">
-    <link rel="stylesheet" href="{% static 'allura_website/css/animate.css' %}">
 
-
-    <!-- stylesheets -->
-    {% block styles %}{% endblock styles %}
 
 
 
