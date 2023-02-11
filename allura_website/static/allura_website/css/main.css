@@ -252,6 +252,9 @@
   line-height: 30px;
 }
 
+
+
+
 .header-content a {
   display: inline-block;
   padding: 20px 50px;
@@ -325,6 +328,11 @@
     margin-top: 120px;
     text-align: center;
   }
+
+  .header-content p {
+    font-size: 18px;
+  }
+
   .header-content span {
     display: inline-block;
   }
@@ -343,6 +351,8 @@
     width: 65%;
   }
 }
+
+
 
 
 
@@ -629,7 +639,7 @@
             transform: translateX(-50%);
   }
   .welcome-header p {
-    font-size: 18px;
+    font-size: 16px;
   }
   .about_content-thumb {
     width: 100%;
@@ -645,6 +655,14 @@
   }
   .contact-widget h3 {
     margin: 0 0 20px 0;
+  }
+
+  .icon a {
+    font-size: 16px;
+  }
+
+  .icon p {
+    font-size: 16px;
   }
 }
 
@@ -890,6 +908,20 @@
   }
   .service__slider_item {
     margin: 15px 15px 15px 15px;
+  }
+
+  .service__slider_item p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .s-box {
+    padding: 30px;
+  }
+
+  .service__header h1 {
+    font-size: 40px;
   }
 }
 
@@ -1346,6 +1378,11 @@
 
 /* Why Choose Us */
 
+.reasons{
+  position: relative;
+  padding: 150px 0;
+}
+
 .why-choose{
   margin-top: 30px;
   border-radius: 30px;
@@ -1353,19 +1390,12 @@
   box-shadow: -15px 15px 0 #47b2e4;
 }
 
-.resume {
-  position: relative;
-  padding: 150px 0;
-}
-
-
-
 .choose {
   padding-left: 15px;
   padding-right: 15px;
 }
 
-.resume__background {
+.reasons_background {
   background: #F1F6F9;
   height: 100%;
   width: 100%;
@@ -1374,39 +1404,15 @@
   left: 0;
 }
 
-/* non responsive header */
 
-.resume__heading {
+.reasons_heading {
   margin-right: 100px;
   position: sticky;
   position: -webkit-sticky;
   top: 150px;
 }
 
-
-
-.resume__heading span {
-  font-size: 20px;
-  font-family: "Poppins", sans-serif;
-  color: #fff;
-  position: relative;
-  display: block;
-  margin: 0 0 20px 30px;
-}
-
-.resume__heading span::before {
-  position: absolute;
-  content: '';
-  height: 2px;
-  width: 20px;
-  top: 50%;
-  left: -20px;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  background: #fff;
-}
-
-.resume__heading h1 {
+.reasons_heading h1 {
   margin: 0 0 30px 0;
   font-size: 50px;
   font-family: "Poppins", sans-serif;
@@ -1414,70 +1420,9 @@
   line-height: 50px;
 }
 
-.resume__heading p {
-  margin: 0 0 0 0;
-  font-family: "Poppins", sans-serif;
-  color: #fff;
-  font-size: 18px;
-  line-height: 34px;
-}
-
-.resume__heading ul {
-  margin: 40px 0 0 0;
-  padding: 0;
-}
-
-.resume__heading ul.nav-tabs {
-  border-bottom: none;
-}
-
-.resume__heading ul li {
-  list-style: none;
-  display: inline-block;
-}
-
-.resume__heading ul li a {
-  padding: 15px 40px;
-  text-decoration: none;
-  display: block;
-  background: #fff;
-  color: #282F49;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  transition: all .3s ease;
-}
 
 
-
-.resume__heading ul li a:hover {
-  background: #425FEE;
-  color: #fff;
-  box-shadow: 0 8px 20px 0 rgba(56, 87, 241, 0.3);
-}
-
-.resume__heading ul li a.active {
-  background: #5D78FF;
-  color: #fff;
-  box-shadow: 0 8px 20px 0 rgba(56, 87, 241, 0.3);
-}
-
-.resume__heading ul li a.active:hover {
-  background: #425FEE;
-}
-
-.resume__heading ul li:nth-child(1) a {
-  border-radius: 7px 0 0 7px;
-}
-
-.resume__heading ul li:nth-child(2) {
-  margin-left: -5px;
-}
-
-.resume__heading ul li:nth-child(2) a {
-  border-radius: 0 7px 7px 0;
-}
-
-.resume__education_item {
+.reasons_items {
   background: #fff;
   padding: 30px;
   border-radius: 20px;
@@ -1485,29 +1430,7 @@
   box-shadow: 0px 20px 40px 0px rgba(50, 65, 141, 0.12);
 }
 
-.resume__education_item span {
-  color: #5D78FF;
-  display: block;
-  font-size: 16px;
-  font-family: "Poppins", sans-serif;
-  margin: 0 0 20px 30px;
-  position: relative;
-  line-height: 1;
-}
-
-.resume__education_item span::before {
-  position: absolute;
-  content: '';
-  height: 2px;
-  width: 20px;
-  top: 50%;
-  left: -20px;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  background: #282F49;
-}
-
-.resume__education_item h4 {
+.reasons_items h4 {
   font-size: 25px;
   font-family: "Poppins", sans-serif;
   color: #4ea29b;
@@ -1515,13 +1438,15 @@
   line-height: 1;
 }
 
-.resume__education_item p {
+.reasons_items p {
   font-family: "Poppins", sans-serif;
   color: #282F49;
   font-size: 18px;
   line-height: 30px;
   margin: 0;
 }
+
+
 
 @media (max-width: 1024px) {
   .why-choose {
@@ -1532,12 +1457,15 @@
   }
 }
 
-@media (max-width: 576px) {
-  .service__header h1 {
-    font-size: 40px;
+@media (max-width: 992px) {
+  .reasons_items p {
+    font-size: 16px;
   }
+}
 
-  .resume__heading h1 {
+@media (max-width: 576px) {
+
+  .reasons_heading h1 {
     font-size: 40px;
   }
 }
@@ -1549,20 +1477,16 @@
 /*responsive header with space between header and box */
 
 @media (max-width: 992px) {
-  .resume {
+  .reasons {
     padding: 50px 0;
   }
-  .resume__heading {
+  .reasons_heading {
     margin-right: 0;
     margin-bottom: 60px;
   }
 }
 
-@media (max-width: 576px) {
-  .resume__heading ul li a {
-    padding: 15px 28px;
-  }
-}
+
 
 
 
