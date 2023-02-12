@@ -3,7 +3,7 @@
         "question":"How is your nutrition?",
         "choice1": "Eats without assistance or prompting",
         "choice2": "Eats with prompting and/or encouragement",
-        "choice3": "Requires constant supervision and some assistance e.g. cut into small pieces of pureed",
+        "choice3": "Requires constant supervision and some assistance e.g. cut into small pieces or pureed",
         "choice4": "Requires complete assistance to eat/is at risk of choking"
     },
     {
@@ -16,14 +16,14 @@
     {
         "question":"What about my orientation?",
         "choice1": "Fully oritentated in time/place/surroundings/people",
-        "choice2": "Occassionaly disorientated or oritentated in a familiar environment or with familiar people only",
+        "choice2": "Occassionaly disorientated or orientated in a familiar environment or with familiar people only",
         "choice3": "Frequently disorientated, tends to wander",
         "choice4": "Completely disorientated, at risk of getting lost"
     },
     {
         "question":"How is your communication?",
-        "choice1": "Good, able to hold a conversation and remembers info",
-        "choice2": "Able to communicate needs, remembers some info",
+        "choice1": "Good, able to hold a conversation and remembers information",
+        "choice2": "Able to communicate needs and remembers some information",
         "choice3": "Unable to communicate verbally but uses some non-verbal communication",
         "choice4": "Non-communicative"
     },
@@ -31,7 +31,7 @@
         "question":"How do you readily accept support",
         "choice1": "Normally co-operative",
         "choice2": "Normally co-operative but ocassionaly needs persuasion",
-        "choice3": "Regularly needs persuason",
+        "choice3": "Regularly needs persuasion",
         "choice4": "Needs persuasion"
     },
     {
@@ -51,8 +51,8 @@
     {
         "question":"What level of insight do I have into my care?",
         "choice1": "Understands care and support needs",
-        "choice2": "Fair understanding of care but is occasionally vunerable",
-        "choice3": "Poor understanding of care and suport needs, can be vunerable",
+        "choice2": "Fair understanding of care but is occasionally vulnerable",
+        "choice3": "Poor understanding of care and suport needs, can be vulnerable",
         "choice4": "No insight into care needs, requires others to make best interest decisions"
     },
     {
@@ -81,7 +81,7 @@
         "choice1": "Self-administers without supervision",
         "choice2": "Require prompts from the carer",
         "choice3": "Administered by the carer, occasionally refuses medication",
-        "choice4": "Admninistered by the carer, frequently refuses medication"
+        "choice4": "Administered by the carer, frequently refuses medication"
     }
 
 ]
