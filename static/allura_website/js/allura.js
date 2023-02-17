@@ -45,96 +45,6 @@ fetch('/static/allura_website/js/questions.json')
 
 
 
-
-
-
-// let questions = [
-//     {
-//         question:"How is your nutrition?",
-//         choice1: "Eats without assistance or prompting",
-//         choice2: "Eats with prompting and/or encouragement",
-//         choice3: "Requires constant supervision and some assistance e.g. cut into small pieces of pureed",
-//         choice4: "Requires complete assistance to eat/is at risk of choking",
-//     },
-//     {
-//         question:"How is my mobility?",
-//         choice1: "Fully Mobile, including ascending and descending stairs",
-//         choice2: "Mobilises independently with the use of mobility aids/supervision",
-//         choice3: "Moderate risk of falls, mobilises with assistance from one person",
-//         choice4: "Requires assistance from more than one person/use of a hoist/bedbound",
-//     },
-//     {
-//         question:"What about my orientation?",
-//         choice1: "Fully orientated in time/place/surroundings/people",
-//         choice2: "Occasionally disorientated or orientated in a familiar environment or with familiar people only",
-//         choice3: "Frequently disorientated, tends to wander",
-//         choice4: "Completely disorientated at risk of getting lost",
-//     },
-//     {
-//         question:"How is your communication?",
-//         choice1: "Good, able to hold a conversation and remembers info",
-//         choice2: "Able to communicate needs, remembers some info",
-//         choice3: "Unable to communicate verbally but uses some non-verbal communication",
-//         choice4: "Non-communicative",
-//     },
-//     {
-//         question:"How do you readily accept support",
-//         choice1: "Normally co-operative",
-//         choice2: "Normally co-operative but ocassionaly needs persuasion",
-//         choice3: "Regularly needs persuason",
-//         choice4: "Needs persuasion",
-//     },
-//     {
-//         question:"How is your general behaviour",
-//         choice1: "Able to manage emotion",
-//         choice2: "Occasionally upset but settles easily with distraction",
-//         choice3: "Frequently upset but will settle after a period of distraction",
-//         choice4: "Frequently upset and difficult to settle",
-//     },
-//     {
-//         question:"Support at night",
-//         choice1: "None",
-//         choice2: "1-2 per week",
-//         choice3: "3-5 per week",
-//         choice4: "Frequently several times a night",
-//     },
-//     {
-//         question:"What level of insight do I have into my care?",
-//         choice1: "Understands care and support needs",
-//         choice2: "Fair understanding of care but is occasionally vunerable",
-//         choice3: "Poor understanding of care and suport needs, can be vunerable",
-//         choice4: "No insight into care needs, requires others to make best interest decisions",
-//     },
-//     {
-//         question:"How am I with dressing myself?",
-//         choice1: "Can dress independently",
-//         choice2: "Can dress myself but require supervision",
-//         choice3: "Needs supervision and assistance",
-//         choice4: "Unable to dress without full assistance",
-//     },
-//     {
-//         question:"How well do I manage my personal hygiene",
-//         choice1: "Manages personal hygiene independently",
-//         choice2: "Manages personal hygiene with some prompting/assistance",
-//         choice3: "Requires supervision and physical assistance",
-//         choice4: "Unable to manage personal hygiene independently",
-//     },
-//     {
-//         question:"What about my continence",
-//         choice1: "Fully continent",
-//         choice2: "Continent but requires assistance to the toilet",
-//         choice3: "Frequently incontinent, requires support to manage with continence aids",
-//         choice4: "Regularly incontinent and requires full support",
-//     },
-//     {
-//         question:"Do I need support with medication",
-//         choice1: "Self-administers without supervision",
-//         choice2: "Administered with supervision, may require prompts",
-//         choice3: "Administered by carer, occasionally refuses medication",
-//         choice4: "Admninistered by carer, frequently refuses medication",
-//     }
-// ];
-
 var answerData = {
     "1": 0,
     "2": 0,
@@ -146,6 +56,14 @@ var answerData = {
 
 
 const MAX_QUESTIONS = 12;
+
+
+
+function collectUserAnswer() {
+    availableQuestions[questionCounter].userAnswer = document.querySelector('input[name="radio"]:checked').value;
+}
+
+
 
 
 
@@ -173,13 +91,16 @@ startGame = () => {
         btnBack.disabled = true;
         btnBack.style.color = "black";
     }
-    else {
-        btnBack.style.color = "#fff";
-    }
+
+
+
+
 
 
 
     getNewQuestion = () => {
+
+
 
         if(questionCounter > 0){
             btnBack.style.color = "#fff";
@@ -283,6 +204,8 @@ startGame = () => {
 
 
 
+
+
         });
 
 
@@ -357,6 +280,7 @@ startGame = () => {
         console.log(questionCounter);
 
         if (questionCounter === 0) {
+            btnBack.style.display = "none";
             btnBack.disabled = true;
             btnBack.style.color = "black";
         }
@@ -443,6 +367,8 @@ startGame = () => {
             //     }
 
             // });
+
+
         });
 
         // console.log(elem[choices[questionCounter]]);
@@ -570,6 +496,8 @@ startGame = () => {
 
 
 
+
+
     incrementScore = num => {
 
         if (num === "1") {
@@ -608,6 +536,9 @@ startGame = () => {
                 questionCounter++;
                 if (counter > 1) {
                     btnBack.style.display = "inline-block";
+                }
+                else if (counter === 1) {
+                    btnBack.style.display = "none";
                 }
                 getNewQuestion();
                 break
