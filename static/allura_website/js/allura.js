@@ -22,6 +22,8 @@ radios = document.getElementsByTagName("input")
 
 
 
+
+
 let currentQuestion = {};
 let acceptingAnswers = false;
 let score = 0;
@@ -59,10 +61,33 @@ const MAX_QUESTIONS = 12;
 
 
 
-function collectUserAnswer() {
-    availableQuestions[questionCounter].userAnswer = document.querySelector('input[name="radio"]:checked').value;
+// function collectUserAnswer() {
+//     availableQuestions[questionCounter].userAnswer = document.querySelector('input[name="radio"]:checked').value;
+// }
+
+var radios = document.getElementsByTagName("input");
+
+function restorePreviousAnswer() {
+    if (choices[currentquestion] != null) {
+        radios[choices[currentQuestion]].checked = true
+    }
+
 }
 
+// Uncheck radio
+        // var ele = document.getElementsByName("radio");
+        // for (var i = 0; i < ele.length; i++)
+        //     ele[i].checked = false;
+
+        // // remove highlight from previous selected choice
+        // var elem = document.getElementsByClassName('group');
+        // for (var i = 0; i < elem.length; i++)
+        //     elem[i].style.backgroundColor = '#fff';
+
+        // // remove border color from previous selected choice
+        // var elem = document.getElementsByClassName('group');
+        // for (var i = 0; i < elem.length; i++)
+        //     elem[i].style.border = '2px solid #ccc';
 
 
 
@@ -240,19 +265,21 @@ startGame = () => {
         // }
 
         // Uncheck radio
-        var ele = document.getElementsByName("radio");
-        for (var i = 0; i < ele.length; i++)
-            ele[i].checked = false;
+        // var ele = document.getElementsByName("radio");
+        // for (var i = 0; i < ele.length; i++)
+        //     ele[i].checked = false;
 
-        // remove highlight from previous selected choice
-        var elem = document.getElementsByClassName('group');
-        for (var i = 0; i < elem.length; i++)
-            elem[i].style.backgroundColor = '#fff';
+        // // remove highlight from previous selected choice
+        // var elem = document.getElementsByClassName('group');
+        // for (var i = 0; i < elem.length; i++)
+        //     elem[i].style.backgroundColor = '#fff';
 
-        // remove border color from previous selected choice
-        var elem = document.getElementsByClassName('group');
-        for (var i = 0; i < elem.length; i++)
-            elem[i].style.border = '2px solid #ccc';
+        // // remove border color from previous selected choice
+        // var elem = document.getElementsByClassName('group');
+        // for (var i = 0; i < elem.length; i++)
+        //     elem[i].style.border = '2px solid #ccc';
+
+
 
 
 
@@ -276,6 +303,8 @@ startGame = () => {
 
         currentQuestion = availableQuestions[questionCounter];
         question.innerText = currentQuestion.question;
+
+        // restorePreviousAnswer();
 
         console.log(questionCounter);
 
@@ -537,9 +566,9 @@ startGame = () => {
                 if (counter > 1) {
                     btnBack.style.display = "inline-block";
                 }
-                else if (counter === 1) {
-                    btnBack.style.display = "none";
-                }
+                // else if (counter === 1) {
+                //     btnBack.style.display = "none";
+                // }
                 getNewQuestion();
                 break
             };
