@@ -32,6 +32,8 @@ let score = 0;
 let questionCounter = 0;
 let availableQuestions = [];
 let questions = [];
+let checking = [];
+
 
 
 
@@ -105,6 +107,7 @@ startGame = () => {
     questionCounter = 0;
     score = 0;
     availableQuestions = [...questions];
+
 
     // chosen = [];
 
@@ -528,6 +531,7 @@ startGame = () => {
             acceptingAnswers = false;
             const selectedChoice = e.target
             const selectedAnswer = selectedChoice.dataset["number"];
+            console.log(selectedAnswer)
 
 
 
@@ -548,38 +552,38 @@ startGame = () => {
 
 
 
-            // //NEXT BUTTON //
-            // btn.onclick = function () {
-            //     const rbs = document.querySelectorAll('input[name="radio"]');
-            //     rbs.checked = false;
-            //     for (const rb of rbs) {
-            //         if (rb.checked === true) {
-            //             getNewQuestion();
-            //             break
-            //         };
-            //     };
-            // };
+    //         // //NEXT BUTTON //
+    //         // btn.onclick = function () {
+    //         //     const rbs = document.querySelectorAll('input[name="radio"]');
+    //         //     rbs.checked = false;
+    //         //     for (const rb of rbs) {
+    //         //         if (rb.checked === true) {
+    //         //             getNewQuestion();
+    //         //             break
+    //         //         };
+    //         //     };
+    //         // };
 
 
 
-            // old unchecked radio
+    //         // old unchecked radio
 
 
-            // if(document.querySelectorAll('input[name="radio"]').checked == true){
+    //         // if(document.querySelectorAll('input[name="radio"]').checked == true){
 
-            //     nextQuestion.addEventListener("click", () => {
-            //         getNewQuestion();
-            //     });
-            // } else return;
-
-
-
+    //         //     nextQuestion.addEventListener("click", () => {
+    //         //         getNewQuestion();
+    //         //     });
+    //         // } else return;
 
 
 
-            // old get new question
 
-            /*getNewQuestion();*/
+
+
+    //         // old get new question
+
+    //         /*getNewQuestion();*/
         });
     });
 
@@ -589,7 +593,7 @@ startGame = () => {
     //     if (choices[currentQ] != null) radios[choices[currentQ]].checked = true
     // }
 
-    console.log(radios[choices[currentQuestion]])
+    // console.log(radios[choices[currentQuestion]])
 
 
 
@@ -630,20 +634,32 @@ startGame = () => {
 
     btn.addEventListener('click', () => {
 
-        btnBack.style.display = "#fff";
+        checking = [];
+
+        // btnBack.style.display = "#fff";
 
         const rbs = document.querySelectorAll('input[name="radio"]');
-        rbs.checked = false;
+        // rbs.checked = false;
 
         // store picked value
 
         for (var i = 0; i < rbs.length; i++) {
             if(rbs[i].checked) {
-                answers[questionCounter] = rbs[i].value;
+                answers[questionCounter] = Number(rbs[i].value);
+
+
+                // answers[questionCounter] = rbs[i].value;
+
+
+
             }
         }
 
         console.log(answers);
+
+        // answers.forEach(item => {
+        //     score += item;
+        // });
 
 
 
@@ -686,6 +702,14 @@ startGame = () => {
 
         checking = answers.pop();
 
+        score = score - checking;
+
+        // answers.forEach(item => {
+        //     score += item;
+        // });
+
+
+
 
 
 
@@ -696,12 +720,12 @@ startGame = () => {
 
         var rLen = rbs.length, i;
         for (i = 0; i < rbs.length; ++i) {
-            if (checking === rbs[i].value) {
+            if (checking === Number(rbs[i].value)) {
                 rbs[i].checked = true;
             }
         }
 
-        delete(checking);
+        checking = [];
 
 
 
