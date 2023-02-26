@@ -31,7 +31,7 @@ Font load
   box-shadow: 0px 0px 10px;
 }
 
-.button3{
+.btnExit{
   background-color: red;
   border: none;
   border-radius: 25px;
@@ -43,7 +43,7 @@ Font load
   margin-top: 30px;
 }
 
-.button3 a {
+.btnExit a {
   color: white;
   font-family: "poppins";
   font-size: 18px;
@@ -236,7 +236,7 @@ label p {
 
 
 
-.button {
+.btnBack {
   background-color: #089de3;
   display: flex;
   height: 60px;
@@ -247,14 +247,14 @@ label p {
   transition: box-shadow 1299 ease;
 }
 
-.button:hover{
+.btnBack:hover{
   background: #0578ca;
   box-shadow: 0 8px 20px rgb(0 181 251 / 32%);
   transform: scale(1.03);
   cursor: pointer;
 }
 
-.button2:hover{
+.btnNext:hover{
   background: #0578ca;
   box-shadow: 0 8px 20px rgb(0 181 251 / 32%);
   transform: scale(1.03);
@@ -263,7 +263,7 @@ label p {
 
 
 
-.button2 {
+.btnNext {
   height: 60px;
   position: relative;
   float: right;
@@ -330,7 +330,7 @@ label p {
   .overlap-group{
     padding: 0 10px;
   }
-  .button {
+  .btnBack {
     width: 150px;
     margin-right: 10%;
   }
@@ -372,7 +372,7 @@ label p {
     margin-top: 1em;
     margin-bottom: 1em;
   }
-  .button3 {
+  .btnExit {
     background-color: red;
     border: none;
     border-radius: 25px;
@@ -385,7 +385,7 @@ label p {
     margin-top: 20px;
 
   }
-  .button3 a {
+  .btnExit a {
     color: white;
     font-family: "poppins";
     font-size: 16px;
