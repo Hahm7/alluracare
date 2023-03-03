@@ -121,6 +121,13 @@ startGame = () => {
 
 
 
+
+
+
+
+
+
+
         // Update choices
         choices.forEach(choice => {
 
@@ -128,6 +135,19 @@ startGame = () => {
             choice.innerText = currentQuestion['choice' + number];
 
         });
+
+        // // Validate
+        // function validateOption(){
+        //     var rbs = document.querySelectorAll('input[name="radio"]');
+
+        //      for ( var i = 0; i < rbs.length; i++){
+        //          if (rbs[i].checked)
+        //              return true;
+        //      }
+        //         // else you can show error message like this
+        //         document.getElementById("error").innerHTML="Please enter your choice";
+        //         return false;
+        // }
 
         // Accept answer to record chosen choice
         acceptingAnswers = true;
@@ -257,23 +277,31 @@ startGame = () => {
     // Next Button
     btnNext.addEventListener('click', () => {
 
+        // Validate that a choice is picked
+        if (acceptingAnswers) {
+            swal("Oppss !", "Please pick a choice.", "error");
+            return false
+        }
+
         // Remove values inside checking
         checking = [];
 
         // Store radios
         const rbs = document.querySelectorAll('input[name="radio"]');
 
+
+
+
+
         // Store all the values of the checked radios into answers array and convert them into a number
 
-        for (var i = 0; i < rbs.length; i++) {
-            if(rbs[i].checked) {
-                answers[questionCounter] = Number(rbs[i].value);
-            }
-        }
+
 
         // When the next button is clicked, run a loop of the radios to check if one of them is checked
         // and if one of them is checked, increase the counter and question counter by 1 and get
         // a new question
+
+
 
         for (const rb of rbs) {
             if (rb.checked === true) {
@@ -286,7 +314,7 @@ startGame = () => {
                 getNewQuestion();
 
                 // break
-            };
+            }
         };
     });
 
