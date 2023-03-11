@@ -24,6 +24,8 @@ const btnBack = document.getElementById('btnBack');
 
 
 
+
+
 // Trackers
 
 let currentQuestion = {};
@@ -77,6 +79,7 @@ startGame = () => {
     if (questionCounter === 0) {
         btnBack.style.display = "none";
         btnBack.disabled = true;
+
         // btnBack.style.color = "black";
     }
 

@@ -363,11 +363,11 @@ label p {
   .group {
     padding: 0px 15px 0px 50px;
   }
-  .wrap {
+  /*.wrap {
     position: fixed;
     bottom: 15px;
     left:40px;
-  }
+  }*/
   h2 {
     margin-top: 1em;
     margin-bottom: 1em;
