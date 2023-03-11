@@ -83,6 +83,17 @@ startGame = () => {
     // Function for new question
     getNewQuestion = () => {
 
+        // if (questionCounter === 0) {
+        //     score = 0;
+        //     // btnBack.style.color = "black";
+        // }
+
+        // empty score if questionCounter = 0
+
+        // if (questionCounter == 0) {
+        //     score = 0;
+        // }
+
         // Uncheck radio
 
         var ele = document.getElementsByName("radio");
@@ -163,6 +174,17 @@ startGame = () => {
     // Function for previous Question
 
     getPreviousQuestion = () => {
+
+        // empty score if questionCounter = 0
+
+        // if (questionCounter == 0) {
+        //     score = 0;
+        // }
+
+        // if (questionCounter === 0) {
+        //     score = 0;
+        //     // btnBack.style.color = "black";
+        // }
 
 
         // If a radio is checked, apply styles
@@ -256,7 +278,7 @@ startGame = () => {
             acceptingAnswers = false;
             const selectedChoice = e.target
             const selectedAnswer = selectedChoice.dataset["number"];
-            console.log(selectedAnswer)
+
 
 
 
@@ -277,24 +299,42 @@ startGame = () => {
     // Next Button
     btnNext.addEventListener('click', () => {
 
+
+
         // Validate that a choice is picked
-        if (acceptingAnswers) {
-            swal("Oppss !", "Please pick a choice.", "error");
-            return false
-        }
+        // if (acceptingAnswers & score = 0) {
+        //     swal("Oppss !", "Please pick a choice.", "error");
+        //     return false
+        // }
 
         // Remove values inside checking
         checking = [];
+        console.log(checking);
+        console.log(score);
+        console.log(answers);
 
         // Store radios
         const rbs = document.querySelectorAll('input[name="radio"]');
+
+
+        // Validate that a choice is picked
+        for (i = 0; i < rbs.length; i++) {
+            if (score == 0 && rbs[i].checked == true) {
+                selectChoice = rbs[i].value;
+                incrementScore(selectChoice);
+            }
+        }
 
 
 
 
 
         // Store all the values of the checked radios into answers array and convert them into a number
-
+        for (var i = 0; i < rbs.length; i++) {
+             if(rbs[i].checked) {
+                 answers[questionCounter] = Number(rbs[i].value);
+             }
+        }
 
 
         // When the next button is clicked, run a loop of the radios to check if one of them is checked
@@ -326,7 +366,12 @@ startGame = () => {
 
         checking = answers.pop();
 
-        score = score - checking;
+        if(score > 0) {
+            score = score - checking;
+        }
+
+
+
 
 
 
@@ -345,6 +390,10 @@ startGame = () => {
         // Remove values in checking
 
         checking = [];
+
+        console.log(checking);
+        console.log(score);
+        console.log(answers);
 
 
         // As long as counter is more than 1 and question counter is more than 0, take 1 away

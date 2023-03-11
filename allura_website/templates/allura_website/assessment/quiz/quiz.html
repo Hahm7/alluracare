@@ -136,6 +136,22 @@
     });
 </script>
 
+<!-- <script>
+    $("input:radio").change(function() {
+        var names = {};
+        $(':radio').each(function() {
+            names[$(this).attr('radio')] = true;
+        });
+        var count = 0;
+        $.each(names, function() {
+            count++;
+        });
+        if ($(':radio').is(":unchecked").length === count) {
+            swal("Oppss !", "Please pick a choice.", "error");
+        }
+    }).change();
+</script> -->
+
 
 
 
