@@ -94,7 +94,7 @@ Font load
 }
 
 #progressBarFull{
-    height: 1.4rem;
+    height: 1.5rem;
     background-color: #fff;
     width: 0%;
 }
@@ -291,6 +291,9 @@ label p {
 @media (max-width: 992px) {
   .quizLogo {
     margin-top: -40px;
+  }
+  .form {
+    margin: 25% auto;
   }
 
 
