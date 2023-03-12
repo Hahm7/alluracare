@@ -328,7 +328,7 @@ label p {
     font-size: 22px;
   }
   .form {
-    margin: auto;
+    margin: 20% auto;
   }
   .overlap-group{
     padding: 0 10px;
@@ -395,6 +395,13 @@ label p {
     font-weight: 600;
     text-decoration: none;
   }
+}
+
+@media (max-width: 375px) {
+  .form {
+    margin: auto;
+  }
+
 }
 
 
