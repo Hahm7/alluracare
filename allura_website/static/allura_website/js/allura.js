@@ -273,24 +273,6 @@ startGame = () => {
     };
 
 
-    // Increment score based on chosen choice
-    choices.forEach(choice => {
-        choice.addEventListener("click", e => {
-            if (!acceptingAnswers) return;
-
-            acceptingAnswers = false;
-            const selectedChoice = e.target
-            const selectedAnswer = selectedChoice.dataset["number"];
-
-
-
-
-
-
-            incrementScore(selectedAnswer);
-
-        });
-    });
 
 
 
@@ -301,6 +283,29 @@ startGame = () => {
 
     // Next Button
     btnNext.addEventListener('click', () => {
+
+        // Increment score based on chosen choice
+
+
+
+        // choices.forEach(choice => {
+        //     choice.addEventListener("click", e => {
+        //         if (!acceptingAnswers) return;
+
+        //         acceptingAnswers = false;
+        //         const selectedChoice = e.target
+        //         const selectedAnswer = selectedChoice.dataset["number"];
+
+
+
+
+
+
+        //         incrementScore(selectedAnswer);
+
+        //     });
+        // });
+
 
 
 
@@ -321,21 +326,24 @@ startGame = () => {
 
 
         // Validate that a choice is picked
-        for (i = 0; i < rbs.length; i++) {
-            if (score == 0 && rbs[i].checked == true) {
-                selectChoice = rbs[i].value;
-                incrementScore(selectChoice);
-            }
-        }
+
+
+        // for (i = 0; i < rbs.length; i++) {
+        //     if (score == 0 && rbs[i].checked == true) {
+        //         selectChoice = rbs[i].value;
+        //         incrementScore(selectChoice);
+        //     }
+        // }
 
 
 
 
 
-        // Store all the values of the checked radios into answers array and convert them into a number
+        // Store all the values of the checked radios into answers array and convert them into a number. Use values to also increment score
         for (var i = 0; i < rbs.length; i++) {
              if(rbs[i].checked) {
                  answers[questionCounter] = Number(rbs[i].value);
+                 incrementScore(rbs[i].value);
              }
         }
 
