@@ -251,6 +251,12 @@ body {
 
 
 @media (max-width: 992px) {
+  .quiz-assessment h2 {
+    margin: 75px auto;
+  }
+  #card {
+    margin: 10px auto 150px;
+  }
   .col {
     margin: 0 auto;
     max-width: 1260px;

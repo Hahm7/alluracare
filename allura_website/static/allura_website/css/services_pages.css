@@ -113,6 +113,15 @@
 }
 
 
+@media (max-width: 992px) {
+  .right_sidebar .right_sidebar_widget {
+    margin: 50px 0 100px 0;
+    padding: 50px;
+  }
+}
+
+
+
 /* Sidebar Advice */
 
 
@@ -199,6 +208,14 @@
   border-bottom: 3px solid white;
   content: "";
 }
+
+
+@media (max-width: 992px) {
+  .right_sidebar ul {
+    padding: revert;
+  }
+}
+
 
 
 
