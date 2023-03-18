@@ -1283,35 +1283,35 @@
 
 /* Our Partners */
 
-.testimonial {
+.partners {
   background: #fff;
   padding: 75px 0 200px;
 }
 
 
 
-.testimonial__background_shape {
+.partners__background_shape {
   width: 100%;
   top: 0;
   left: 0;
 }
 
-.testimonial__background_shape svg {
+.partners__background_shape svg {
   width: 100%;
 }
 
-.testimonial__background_shape svg path {
+.partners__background_shape svg path {
   fill: #fff;
 }
 
 
 
-.testimonial__header {
+.partners__header {
   margin-bottom: 50px;
 }
 
 
-.testimonial__header h1 {
+.partners__header h1 {
   margin: 0;
   font-size: 55px;
   font-family: "Poppins", sans-serif;
@@ -1358,19 +1358,19 @@
 
 
 @media (max-width: 992px) {
-  .testimonial {
+  .partners {
     padding: 100px 0;
   }
 }
 
 @media (max-width: 768px) {
-  .testimonial__header h1 {
+  .partners__header h1 {
     font-size: 40px;
   }
 }
 
 @media (max-width: 576px) {
-  .testimonial__background_shape {
+  .partners__background_shape {
     display: none;
   }
 }
