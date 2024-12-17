@@ -1,5 +1,5 @@
 app = "alluracare"
-primary_region = "lhr"  # London region, change if needed
+primary_region = "lhr"
 
 [build]
   builder = "paketobuildpacks/builder:base"
@@ -18,6 +18,3 @@ primary_region = "lhr"  # London region, change if needed
 [[statics]]
   guest_path = "/app/static"
   url_prefix = "/static/"
-
-[deploy]
-  release_command = "python manage.py migrate"
