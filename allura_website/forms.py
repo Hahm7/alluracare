@@ -34,6 +34,12 @@ class ContactForm(forms.Form):
             'max_length': 'Your message is too long (2000 characters max).',
         },
     )
+    not_supplement = forms.BooleanField(
+        required=True, label='I understand Allura Care is a home care provider and does not sell supplements or medication.',
+        error_messages={
+            'required': 'Please confirm you understand we are a home care provider, not a supplement seller.',
+        },
+    )
     terms = forms.BooleanField(
         required=True, label='Consent given',
         error_messages={

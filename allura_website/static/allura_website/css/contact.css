@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,800,900|Yeseva+One&display=swap");
 body {
   background: #F1F6F9;
 }
@@ -524,6 +523,17 @@ textarea.input {
 /* Consent  */
 .form-check-label {
   color: #fff;
+}
+
+.contact-form a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.contact-form a:hover,
+.contact-form a:focus {
+  color: #ffeb99;
 }
 
 

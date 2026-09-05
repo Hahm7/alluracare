@@ -4,6 +4,7 @@ from . import views
 urlpatterns = [
     path('', views.home, name='allura-home'),
     path('about/', views.about, name='allura-about'),
+    path('privacy/', views.privacy, name='allura-privacy'),
     path('services/', views.services, name='allura-services'),
     path('services/personal_care', views.personalCare, name='allura-services-personalCare'),
     path('services/medication', views.medication, name='allura-services-medication'),

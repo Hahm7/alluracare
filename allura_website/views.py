@@ -14,6 +14,8 @@ def home(request):
 def about(request):
     return render(request, 'allura_website/about.html', {'title': 'About'})
 
+def privacy(request):
+    return render(request, 'allura_website/privacy.html', {'title': 'Privacy Policy'})
 
 def services(request):
     return render(request, 'allura_website/service/services.html', {'title': 'Services'})

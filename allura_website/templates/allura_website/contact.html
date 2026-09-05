@@ -59,8 +59,18 @@
                   <h4>Call:</h4>
                   <p class="phone">0203 620 4327</p>
                 </div>
-
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.6789965756375!2d-0.2865483842289206!3d51.53744727964006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876122043ebceef%3A0x2d8e8a5b6bacd373!2sN%20Circular%20Rd%2C%20London%20NW10%207PN!5e0!3m2!1sen!2suk!4v1609692968584!5m2!1sen!2suk"  frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>
+                <div id="map-placeholder" class="map-placeholder">
+                  <div class="map-placeholder-overlay">
+                    <p>Suite 605, Crown House, North Circular Road, NW10 7PN</p>
+                    <button type="button" class="btn" onclick="loadAlluraMap()">Show interactive map</button>
+                  </div>
+                </div>
+                <script>
+                  function loadAlluraMap() {
+                    document.getElementById('map-placeholder').outerHTML =
+                      '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2481.6789965756375!2d-0.2865483842289206!3d51.53744727964006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4876122043ebceef%3A0x2d8e8a5b6bacd373!2sN%20Circular%20Rd%2C%20London%20NW10%207PN!5e0!3m2!1sen!2suk!4v1609692968584!5m2!1sen!2suk" style="border:0; width:100%; height:290px;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>';
+                  }
+                </script>
               </div>
             </div>
 
@@ -73,6 +83,13 @@
                       {% csrf_token %}
                       {{ form.website }}
                       <h3 class="title">Contact Us</h3>
+                      <div class="alert alert-warning" role="alert">
+                        <strong>Please note:</strong> Allura Care is a <strong>domiciliary (home) care provider</strong>
+                        based in London. We do <strong>not</strong> sell, ship or supply supplements, vitamins, or
+                        medication products. If you're trying to cancel a subscription or stop supplement deliveries,
+                        you've reached the wrong company and we're unable to help. Please contact the retailer you
+                        ordered from. Thank you for understanding.
+                      </div>
                     
                       {% if form.errors %}
                       <div class="alert alert-danger">
@@ -110,8 +127,16 @@
                       {% for error in form.message.errors %}<small class="text-danger d-block mb-2">{{ error }}</small>{% endfor %}
                     
                       <div class="form-check">
-                        <input type="checkbox" class="form-check-input" value="True" name="terms" id="terms" {% if form.terms.value %}checked{%endif %} required>
-                        <label class="form-check-label" for="terms">I consent to sharing my personal information</label>
+                        <input type="checkbox" class="form-check-input" value="True" name="not_supplement" id="not_supplement" {% if form.not_supplement.value %}checked{% endif %} required>
+                        <label class="form-check-label" for="not_supplement">
+                          I understand Allura Care is a home care provider and does <strong>not</strong> sell supplements or medication.
+                        </label>
+                      </div>
+                      {% for error in form.not_supplement.errors %}<small class="text-danger d-block mb-2">{{ error }}</small>{% endfor %}
+
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" value="True" name="terms" id="terms" {% if form.terms.value %}checked{% endif %} required>
+                        <label class="form-check-label" for="terms">I consent to my personal information being processed in line with the <a href="{% url 'allura-privacy' %}" target="_blank" rel="noopener">Privacy Policy</a>.</label>
                       </div>
                       {% for error in form.terms.errors %}<small class="text-danger d-block mb-2">{{ error }}</small>{% endfor %}
                     

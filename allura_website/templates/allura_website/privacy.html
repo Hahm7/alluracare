@@ -1,0 +1,101 @@
+{% extends "allura_website/base.html" %}
+{% load static %}
+{% block styles %}
+    <link rel="stylesheet" href="{% static 'allura_website/css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'allura_website/css/privacy.css' %}">
+{% endblock styles %}
+{% block content %}
+
+<section class="about_title">
+  <div class="container">
+    <div class="about__header privacy-policy">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 about-center">
+          <h1>Privacy Policy</h1>
+          <p class="privacy-updated"><em>Last updated: [DATE]</em></p>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+
+          <p>This policy explains how Allura Care collects and uses your
+          personal information when you use our website and contact us. Allura Care is a
+          domiciliary (home) care provider based in London.</p>
+
+          <h3>Who we are</h3>
+          <p>Allura Care is the data controller for the information you provide.<br>
+          Address: Suite 605, Crown House, North Circular Road, London NW10 7PN<br>
+          Email: alluracare@gmail.com &nbsp;|&nbsp; Phone: 0203 620 4327</p>
+          
+          <!-- <br>
+          We are registered with the Information Commissioner's Office (ICO), registration
+          number [ICO REGISTRATION NUMBER].</p> -->
+
+          <h3>What information we collect</h3>
+          <p>When you use our contact form, we collect the <strong>name, email address,
+          telephone number and message</strong> you provide. Because we are a care provider,
+          your message may include information about health or care needs (yours or someone
+          you are enquiring on behalf of). This is "special category" data, which we treat
+          with extra care and only process where you have given us your explicit consent by
+          submitting the form.</p>
+
+          <h3>Why we use it and our lawful basis</h3>
+          <ul>
+            <li>To respond to your enquiry and provide information about our services
+            based on your <strong>consent</strong> (and explicit consent for any health
+            information you choose to share).</li>
+            <li>To protect our website and form from spam and abuse based on our
+            <strong>legitimate interests</strong> in keeping the service secure.</li>
+          </ul>
+          <p>You can withdraw your consent at any time by contacting us using the details above.</p>
+
+          <h3>Cookies and third-party services</h3>
+          <p>We aim to keep tracking to a minimum. We do not use advertising or analytics
+          cookies. The following are used:</p>
+          <ul>
+            <li><strong>Strictly necessary cookies</strong> set by our website to keep the
+            contact form secure (for example a CSRF-protection token). These are required
+            for the site to work and do not require consent.</li>
+            <li><strong>Google reCAPTCHA</strong> is used on our contact form to prevent spam.
+            It is provided by Google and may collect information such as your IP address
+            and interaction data to distinguish humans from bots. See Google's
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a>.</li>
+            <li><strong>Google Maps</strong> is only loaded if you choose to click "Show map".
+            If you do, Google may set cookies and receive your IP address.</li>
+            <li><strong>Care Quality Commission (CQC) widget</strong> is shown on our homepage
+            so visitors can see our official CQC rating. It is provided by the CQC
+            (<a href="https://www.cqc.org.uk" target="_blank" rel="noopener">cqc.org.uk</a>)
+            and may receive your IP address when that page loads. We keep this widget
+            because it is an official regulator rating for our care service. See the CQC's
+            own privacy information on their website.</li>
+          </ul>
+
+          <h3>Who we share your information with</h3>
+          <p>We do not sell your personal information. Your enquiry is delivered to our email
+          provider so we can read and respond to it. The spam-protection and optional map
+          features are provided by Google. The CQC rating widget on our homepage is provided
+          by the Care Quality Commission. We only share information where necessary to
+          provide these services or where required by law.</p>
+
+          <h3>How long we keep it</h3>
+          <p>We keep enquiry messages only for as long as needed to deal with your enquiry and
+          our legitimate business or legal requirements, after which they are deleted.</p>
+
+          <h3>Your rights</h3>
+          <p>Under UK data protection law you have the right to access, correct, delete, or
+          restrict our use of your personal information, to object to processing, to data
+          portability, and to withdraw consent. To exercise any of these, contact us using the
+          details above.</p>
+
+          <h3>Complaints</h3>
+          <p>If you have a concern you can contact us, or complain to the ICO at
+          <a href="https://ico.org.uk" target="_blank" rel="noopener">ico.org.uk</a>.</p>
+
+          <h3>Changes to this policy</h3>
+          <p>We may update this policy from time to time. Any changes will be posted on this page.</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

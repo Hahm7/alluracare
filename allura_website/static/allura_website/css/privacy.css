@@ -1,0 +1,31 @@
+.privacy-policy h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #282F49;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.privacy-policy a {
+  color: #0099CC;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.privacy-policy a:hover,
+.privacy-policy a:focus {
+  color: #007aa3;
+}
+
+.privacy-policy .privacy-updated {
+  margin-top: 1rem;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+@media (max-width: 992px) {
+  .privacy-policy h3 {
+    font-size: 20px;
+  }
+}

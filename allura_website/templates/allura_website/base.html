@@ -26,21 +26,17 @@
 
 
     <!-- Slick -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'allura_website/css/slick.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'allura_website/css/slick-theme.css' %}">
 
     <!-- stylesheets -->
     {% block styles %}{% endblock styles %}
     <!-- imported -->
+    <link rel="stylesheet" href="{% static 'allura_website/css/fonts.css' %}">
     <link rel="stylesheet" href="{% static 'allura_website/css/main.css' %}">
     <link rel="stylesheet" href="{% static 'allura_website/css/animate.css' %}">
 
-    <!--- Google Font --->
-
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700i" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
-
-
+    
     <!-- font awesome -->
     <link rel="stylesheet" href="{% static 'allura_website/font-awesome/css/font-awesome.min.css' %}">
 
@@ -126,6 +122,7 @@
                             <li><a href="{% url 'allura-about' %}" >Who We Are</a></li>
                             <li><a href="{% url 'allura-services' %}" >What We Do</a></li>
                             <li><a href="{% url 'allura-contact' %}">Contact Us</a></li>
+                            <li><a href="{% url 'allura-privacy' %}">Privacy Policy</a></li>
                         </ul>
                     </div>
                 </div>
@@ -186,7 +183,7 @@
 
 {% for message in messages %}
     {% if message.tags == 'success' %}
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="{% static 'allura_website/js/jquery.min.js' %}"></script>
     <script>
         $(document).ready(function() {
             $("#exampleModal").modal('show');
@@ -206,7 +203,7 @@
       </div>
       <div class="modal-body text-center">
         <div class="text-center tmt-3">
-            <i class="fa-regular fa-circle-check fa-6x" style="color: #47b2e4;"></i>
+            <i class="fa fa-check-circle fa-5x" style="color: #47b2e4;"></i>
         </div>
         <br>
         <div class="mb-3">
@@ -235,12 +232,9 @@
 <!-- Bootstrap 4.5 JS -->
 <script src="{% static 'allura_website/js/bootstrap.min.js' %}"></script>
 
-<script type="text/javascript">
-// Notice how this gets configured before we load Font Awesome
-window.FontAwesomeConfig = { autoReplaceSvg: false };
-</script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
 
 
 
@@ -255,13 +249,12 @@ window.FontAwesomeConfig = { autoReplaceSvg: false };
 
 
 <!-- Responsive tabs -->
-<script src="https://cdn.jsdelivr.net/npm/responsive-tabs@1.6.3/js/jquery.responsiveTabs.min.js"></script>
+<script src="{% static 'allura_website/js/jquery.responsiveTabs.min.js' %}"></script>
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<script src="{% static 'allura_website/js/slick.min.js' %}"></script>
 
 <!-- Sweet Alert -->
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="{% static 'allura_website/js/sweetalert.min.js' %}"></script>
 
 
 {% block js %}{% endblock js %}
