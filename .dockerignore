@@ -1,6 +1,23 @@
-fly.toml
 .git/
+fly.toml
 *.sqlite3
 tmp
 .allura
 .env
+allura_project/.env
+
+# Local venvs — Fly installs deps itself
+allura/
+bin/
+lib/
+pyvenv.cfg
+include/
+share/
+
+# Local collectstatic output — rebuilt in the Dockerfile
+static/
+
+# Python / OS junk
+**/__pycache__/
+*.py[cod]
+.DS_Store

@@ -30,23 +30,23 @@ body {
 
 .quiz-assessment h2 {
   display: inline-block;
-  font-size: 35px;
+  font-size: 32px;
   font-weight: 700;
   font-family: "Poppins", sans-serif;
   color: #282F49;
-  margin: 25px auto;
+  margin: 32px auto 16px;
 }
 
 /*Assesment Info*/
 
 #card {
   background-color: rgb(255, 255, 255);
-  font-family: sans-serif;
+  font-family: "Poppins", sans-serif;
   padding-bottom: 42px;
   text-align: center;
   display: block;
   overflow: hidden;
-  margin: 10px auto 100px;
+  margin: 16px auto 80px;
   border-radius: 25px;
   box-shadow: rgb(50 65 141 / 12%) 0px 20px 40px 0px;
   max-width: 1140px;
@@ -58,16 +58,16 @@ body {
 #top-section {
   width: 100%;
   height: 45%;
-  padding: 25px;
+  padding: 32px 40px 16px;
 }
 
 #top-section p {
-  margin: 1rem 0px;
-  padding: 0 0 10px 0;
+  margin: 0 0 1rem;
+  padding: 0;
   font-size: 16px;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
   color: rgb(40, 47, 73);
-  line-height: 34px;
+  line-height: 1.7;
   text-align: left;
   font-weight: 500;
 }
@@ -104,42 +104,33 @@ body {
 #bottom-right-section {
   display: inline-block;
   vertical-align: top;
-  padding: 15px 30px 15px 30px;
+  padding: 24px 28px 32px;
 }
 
 #bottom-left-section {
   display: inline-block;
   vertical-align: top;
-  padding: 15px 30px 15px 30px;
+  padding: 24px 28px 32px;
 }
 
 
-#bottom-left-section h4 {
-  font-size: 20px;
-  font-weight: 700;
-  color: #fff;
-  text-align: center;
-  margin: 10px auto;
-}
-
-#bottom-left-section p {
-  color:#fff;
-  font-size: 16px;
-  font-family: Poppins, sans-serif;
-}
-
+#bottom-left-section h4,
 #bottom-right-section h4 {
   font-size: 20px;
   font-weight: 700;
+  font-family: "Poppins", sans-serif;
   color: #fff;
   text-align: center;
   margin: 10px auto;
 }
 
+#bottom-left-section p,
 #bottom-right-section p {
   color: #fff;
   font-size: 16px;
-  font-family: Poppins, sans-serif;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.6;
+  margin: 0;
 }
 
 
@@ -147,12 +138,12 @@ body {
 #last-section {
   width: 100%;
   height: auto;
-  padding: 50px;
+  padding: 32px 24px 40px;
 }
 
 .btn {
     font-size: 16px;
-    font-family: Poppings, sans-serif;
+    font-family: "Poppins", sans-serif;
     margin: 0 1rem;
     display: inline-block;
     background-color: #5D78FF;
@@ -252,10 +243,14 @@ body {
 
 @media (max-width: 992px) {
   .quiz-assessment h2 {
-    margin: 75px auto;
+    margin: 48px auto 16px;
+    font-size: 28px;
   }
   #card {
-    margin: 10px auto 150px;
+    margin: 10px auto 80px;
+  }
+  #top-section {
+    padding: 24px 20px 12px;
   }
   .col {
     margin: 0 auto;
@@ -265,8 +260,15 @@ body {
 }
 
 @media (max-width: 480px) {
+  .quiz-assessment h2 {
+    font-size: 24px;
+  }
   .service__slider_item_icon {
     margin: auto;
+  }
+  #bottom-left-section,
+  #bottom-right-section {
+    padding: 20px 16px 28px;
   }
   .wrap2 a{
     padding: 15px 30px;

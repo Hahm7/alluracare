@@ -6,7 +6,7 @@
 
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Poppins", sans-serif;
   margin: 0;
   padding: 0;
   color: #333;
@@ -38,7 +38,7 @@
 
 .btnExit a {
   color: white;
-  font-family: "poppins";
+  font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 600;
   text-decoration: none;
@@ -46,7 +46,7 @@
 
 .titleCare {
   color: #fff;
-  font-family: "poppins";
+  font-family: "Poppins", sans-serif;
   font-size: 22px;
   font-weight: 600;
   text-align: center;
@@ -69,7 +69,7 @@
   float: right;
   margin-top: 1rem;
   color: #fff;
-  font-family: "poppins";
+  font-family: "Poppins", sans-serif;
   font-size: 18px;
   font-weight: 600;
   letter-spacing: 0;
@@ -115,11 +115,11 @@ h2 {
 
 #question {
   color: black;
-  font-family: "poppins";
+  font-family: "Poppins", sans-serif;
   font-size: 25px;
   font-weight: 600;
-  margin-bottom: 30px;
-
+  margin-bottom: 24px;
+  line-height: 1.4;
 }
 
 .text-center {
@@ -196,7 +196,7 @@ label p {
   letter-spacing: 0;
   min-height: 60px;
   font-size: 18px;
-
+  line-height: 1.5;
 }
 
 
@@ -345,7 +345,7 @@ label p {
     margin-top: 5%;
     margin-left: 25%;
     color: #fff;
-    font-family: "poppins";
+    font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 600;
     letter-spacing: 0;
@@ -383,7 +383,7 @@ label p {
   }
   .btnExit a {
     color: white;
-    font-family: "poppins";
+    font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 600;
     text-decoration: none;
