@@ -8,7 +8,7 @@ function validateAll() {
     var name = $("#name").val();
     var email = $("#email").val();
     var phone = $("#phone").val();
-    // var subject = $("#subject").val();
+    var subject = $("#subject").val();
     var message = $("#message").val();
     var checkbox = $("input[name=accept]").is(":checked")
 
@@ -28,10 +28,10 @@ function validateAll() {
         swal("Oppss !", "Phone field cannot be empty.", "error");
         return false
     }
-    // else if (subject == '') {
-    //     swal("Oppss !", "Subject field cannot be empty.", "error");
-    //     return false
-    // }
+    else if (subject == '') {
+        swal("Oppss !", "Subject field cannot be empty.", "error");
+        return false
+    }
     else if (message == '') {
         swal("Oppss !", "Message field cannot be empty.", "error");
         return false

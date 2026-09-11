@@ -26,6 +26,14 @@ class ContactForm(forms.Form):
             'max_length': 'That phone number is too long.',
         },
     )
+    subject = forms.CharField(
+        max_length=100, min_length=3,
+        error_messages={
+            'required': 'Please enter a subject.',
+            'min_length': 'Please enter a slightly longer subject (at least 3 characters).',
+            'max_length': 'That subject is too long (100 characters max).',
+        },
+    )
     message = forms.CharField(
         widget=forms.Textarea, min_length=10, max_length=2000,
         error_messages={
@@ -62,6 +70,10 @@ class ContactForm(forms.Form):
             'style': 'position:absolute; left:-9999px;',
         }),
     )
+
+    def clean_subject(self):
+        subject = ' '.join(self.cleaned_data['subject'].split())
+        return subject
 
     def clean_website(self):
         if self.cleaned_data.get('website'):

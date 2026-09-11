@@ -118,6 +118,13 @@
                         <span>Phone *</span>
                       </div>
                       {% for error in form.phone.errors %}<small class="text-danger d-block mb-2">{{ error }}</small>{% endfor %}
+
+                      <div class="input-container">
+                        <input type="text" name="subject" id="subject" class="input" value="{{ form.subject.value|default:'' }}">
+                        <label for="subject">Subject *</label>
+                        <span>Subject *</span>
+                      </div>
+                      {% for error in form.subject.errors %}<small class="text-danger d-block mb-2">{{ error }}</small>{% endfor %}
                     
                       <div class="input-container textarea focus">
                         <textarea name="message" class="input" id="message">{{ form.message.value|default:'' }}</textarea>

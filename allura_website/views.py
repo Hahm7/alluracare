@@ -2,7 +2,7 @@ from django.conf import settings
 from django.contrib import messages
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
-from django.core.mail import send_mail
+from django.core.mail import EmailMessage
 from django_ratelimit.decorators import ratelimit
 from .forms import ContactForm
 
@@ -57,20 +57,22 @@ def contact(request):
 
         if form.is_valid():
             cd = form.cleaned_data
-            message = (
-                "From:\n\t\t{name}\n\n"
-                "Message:\n\t\t{message}\n\n"
-                "Email:\n\t\t{email}\n\n"
-                "Phone:\n\t\t{phone}\n"
-            ).format(**cd)
-
-            send_mail(
-                'Allura Care Website Enquiry',
-                message,
-                settings.DEFAULT_FROM_EMAIL,
-                [settings.CONTACT_RECIPIENT_EMAIL],
-                fail_silently=False,
+            body = (
+                f"Name:  {cd['name']}\n"
+                f"Email: {cd['email']}\n"
+                f"Phone: {cd['phone']}\n"
+                f"\n"
+                f"{cd['message']}\n"
             )
+
+            email = EmailMessage(
+                subject=f"Website enquiry: {cd['subject']}",
+                body=body,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=[settings.CONTACT_RECIPIENT_EMAIL],
+                reply_to=[cd['email']],
+            )
+            email.send(fail_silently=False)
 
             messages.success(request, "Message sent successfully")
             return HttpResponseRedirect('/contact')

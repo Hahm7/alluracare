@@ -17,6 +17,9 @@ RUN set -ex && \
 COPY . /code
 
 ENV SECRET_KEY "0RtJtQHqPUbNIwz137isDBC7C5MiyGIlMwoTXkM8TGnz4Yhdu1"
+ENV DEBUG False
+ENV RECAPTCHA_PUBLIC_KEY dummy
+ENV RECAPTCHA_PRIVATE_KEY dummy
 RUN python manage.py collectstatic --noinput
 
 EXPOSE 8000
