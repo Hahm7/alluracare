@@ -46,7 +46,13 @@ EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = os.getenv('GMAIL_USER_EMAIL')
 CONTACT_RECIPIENT_EMAIL = os.getenv('CONTACT_RECIPIENT_EMAIL') or os.getenv('GMAIL_USER_EMAIL')
 
-CSRF_TRUSTED_ORIGINS = ['https://alluracare.fly.dev', 'https://www.alluracare.co.uk']
+CSRF_TRUSTED_ORIGINS = [
+    'https://alluracare.fly.dev',
+    'https://www.alluracare.co.uk',
+    'https://alluracare.co.uk',
+]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 
 # Application definition
