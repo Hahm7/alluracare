@@ -44,7 +44,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
 DEFAULT_FROM_EMAIL = os.getenv('GMAIL_USER_EMAIL')
-CONTACT_RECIPIENT_EMAIL = os.getenv('CONTACT_RECIPIENT_EMAIL', 'hamdiahmed777@gmail.com')
+CONTACT_RECIPIENT_EMAIL = os.getenv('CONTACT_RECIPIENT_EMAIL') or os.getenv('GMAIL_USER_EMAIL')
 
 CSRF_TRUSTED_ORIGINS = ['https://alluracare.fly.dev', 'https://www.alluracare.co.uk']
 

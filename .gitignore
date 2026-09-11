@@ -16,6 +16,7 @@ __pycache__/
 # Secrets / env
 .env
 /allura_project/.env
+tmp
 
 # OS / editor
 .DS_Store
