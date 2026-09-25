@@ -177,6 +177,8 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 RECAPTCHA_PUBLIC_KEY = os.getenv('RECAPTCHA_PUBLIC_KEY') or ''
 RECAPTCHA_PRIVATE_KEY = os.getenv('RECAPTCHA_PRIVATE_KEY') or ''
 
+EMPLOYEE_API_TOKEN = os.getenv('EMPLOYEE_API_TOKEN') or config('EMPLOYEE_API_TOKEN', default='')
+
 
 CACHES = {
     'default': {

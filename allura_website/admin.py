@@ -1,10 +1,10 @@
 from django.contrib import admin
-# from .models import Contact
-# Register your models here.
 
-# class ContactAdmin(admin.ModelAdmin):
-#     list_display = ['name', 'email', 'phone', 'created_at']
-#     search_fields = ['name', 'email', 'phone']
-#     list_per_page = 6
+from .models import Employee
 
-# admin.site.register(Contact, ContactAdmin)
+
+@admin.register(Employee)
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display = ['employee_id', 'first_name', 'last_name', 'date_started', 'telephone', 'email']
+    search_fields = ['employee_id', 'first_name', 'last_name', 'telephone', 'email']
+    ordering = ['employee_id']

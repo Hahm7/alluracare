@@ -1,7 +1,9 @@
 from django.urls import path
-from . import views
+from . import employee_api, views
 
 urlpatterns = [
+    path('api/employees/', employee_api.employees, name='employee-list'),
+    path('api/employees/<int:employee_id>/', employee_api.employee_detail, name='employee-detail'),
     path('', views.home, name='allura-home'),
     path('about/', views.about, name='allura-about'),
     path('privacy/', views.privacy, name='allura-privacy'),
