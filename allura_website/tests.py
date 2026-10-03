@@ -2,7 +2,7 @@ import json
 
 from django.test import TestCase, override_settings
 
-from allura_website.models import Employee
+from allura_website.models import AppLog, Employee
 
 
 TOKEN = 'test-staff-token'
@@ -79,3 +79,58 @@ class EmployeeApiTests(TestCase):
         deleted = self.client.delete('/api/employees/100/', **AUTH)
         self.assertEqual(deleted.status_code, 204)
         self.assertFalse(Employee.objects.filter(pk=100).exists())
+
+
+@override_settings(EMPLOYEE_API_TOKEN=TOKEN)
+class AppLogApiTests(TestCase):
+    def test_rejects_missing_token(self):
+        response = self.client.post(
+            '/api/app-logs/',
+            data=json.dumps({'computer_name': 'front-desk', 'message': 'Could not save.'}),
+            content_type='application/json',
+        )
+        self.assertEqual(response.status_code, 401)
+        self.assertEqual(AppLog.objects.count(), 0)
+
+    def test_saves_report_and_defaults_level(self):
+        response = self.client.post(
+            '/api/app-logs/',
+            data=json.dumps({'computer_name': 'front-desk', 'message': 'Could not save.'}),
+            content_type='application/json',
+            **AUTH,
+        )
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(response.content, b'')
+        log = AppLog.objects.get()
+        self.assertEqual(log.computer_name, 'front-desk')
+        self.assertEqual(log.level, 'ERROR')
+        self.assertEqual(log.message, 'Could not save.')
+
+    def test_trims_message_and_keeps_latest_300(self):
+        response = self.client.post(
+            '/api/app-logs/',
+            data=json.dumps({
+                'computer_name': 'front-desk',
+                'level': 'ERROR',
+                'message': 'x' * 25000,
+            }),
+            content_type='application/json',
+            **AUTH,
+        )
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(len(AppLog.objects.get().message), 20000)
+
+        AppLog.objects.all().delete()
+        AppLog.objects.bulk_create([
+            AppLog(computer_name='old', level='ERROR', message=str(i))
+            for i in range(300)
+        ])
+        response = self.client.post(
+            '/api/app-logs/',
+            data=json.dumps({'computer_name': 'new-pc', 'message': 'latest'}),
+            content_type='application/json',
+            **AUTH,
+        )
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(AppLog.objects.count(), 300)
+        self.assertTrue(AppLog.objects.filter(computer_name='new-pc').exists())
